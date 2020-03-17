@@ -1,0 +1,47 @@
+#### 08/03/2005 ####
+- the application commands are now by default appended a "&" 
+  at the end, if you include a "&" at the end an error will be
+  raised and the application will not run!
+
+- Major code cleanups. The application now runs in one thread.
+
+#### 06/03/2005 ####
+- New configuration parser
+  
+- Maximum limit of buttons to load is no more hardcoded. It
+  can be tweaked to your liking through ~/.bbbuttonrc 
+  
+- Comments on the configuration file and null lines are
+  disregarded instead of crashing the application
+
+#### 15/01/2003 ####
+- Implemented support for transparent xpm's.
+- Tide up rest of the code.
+
+#### 10/01/2003 ####
+- Tide up some of the code and changed that README to
+  something more user friendly.
+   
+#### 29/11/2002 ####
+- Fixed mouse click problem. Only left mouse button should be
+  used to press a button.
+
+#### 09/11/2002 ####
+- Modified the Makefile so that the code compiles under FreeBSD.
+- Corrected minor typos in the CHANGES file.
+
+#### 29/10/2002 ####
+- Changed icon fonts so they adopt the wm's background
+  color. Anyway the click efect is much better now (I think).
+
+#### 23/09/2002 ####
+- Changed most of the code to object oriented.
+- Implemented a configuration file (.bbbuttonrc), so we 
+  don't have to deal with xinitrc.
+
+#### 26/07/2002 ####
+- Used some sizeof() on the strncpy() for security
+  purposes.
+- Deleted the huge 128 array length value from 
+  strncpy().
+- Tide up the rest code.

@@ -1,0 +1,89 @@
+                       +---------------+
+                       | bbbutton v0.8 |
+                       +---------------+
+	
+            HOMEPAGE: www.angelfire.com/theforce/button/
+
+	   
+1. What is bbbutton
+
+    This is a dock application for BlackBox (not only), that allows you
+    to create single application launch buttons with the image and
+    application launch of your preference.
+    
+2. Install/Uninstall/Upgrade
+
+    tar -zxvf bbbutton_0.8.tar.gz
+    cd bbbutton_0.8
+    make <systype>        (systypes recognised: linux, freebsd)
+    make install ( or uninstall )
+    
+    NOTE: To upgrade to version 0.8 replace your existing "bbbutton"
+          binary, but remember to use the new .bbbuttonrc format
+          as outlined in the next section.
+
+3. OK, now what !!
+  
+   Load multiple buttons when your X windows start using the 
+   configuration file .bbbuttonrc which is located 
+   in your home directory (try ls -a !!!). There we go in simple
+   steps:
+	
+   a) Edit .bbbuttonrc file and type in the bbbuttons you wish 
+      to create.
+      
+      i.e your .bbbuttonrc should contain something like this:
+      #--File .bbbuttonrc start---------------------
+	#------------------------------------------------#
+	#        BBButton Configuration file             #
+	# Format: <path to XPM image> <program to run>   #
+	#------------------------------------------------#
+
+	[BUTTON_NO]
+	MaxButtons   =   20
+
+	[LOAD]
+	/root/.DesktopIcons/opera.xpm opera
+	/usr/local/shared/icons/cd1.xpm /usr/local/bin/exampleBin
+	#/root/.DesktopIcons/bcb.xpm bash --login startbcb   
+	/root/.DesktopIcons/gambas.xpm gambas
+	/root/.DesktopIcons/xmms.xpm xmms
+	/root/.DesktopIcons/mail.xpm sylpheed
+
+      #--File .bbbuttonrc end------------------------
+
+   b) You need to load bbbutton itself through xinitrc.
+      
+      i.e your xinitrc should contain this:
+      --File xinitrc start-
+       bbbutton &
+       exec blackbox
+      --File xinitrc end--- 
+      
+4. Requirements
+
+    - The image must be of type 'xpm' and size '48x48'
+      ( XV, ImageMagic and Gimp are some applications 
+        that could do that for you)
+
+5. Licencing
+
+    This program is released under the LGPL license.
+    A copy can be found in this distribution in the file 
+    COPYING. 
+
+6. Author(s)
+
+    Konstantinos Mantzaris <GODoal@hotmail.com>
+    Stathis <p00pie@sourceforge.net>
+    
+    - Tnx to John Vlahogianis for the 'Stella Artois' supplies
+      during the completion of this section. 
+    - MBill for the FRAME hints..
+    - Extra tnx to Konstantinos Peletidis for porting the 
+      Makefile to compile under FreeBSD.
+    - Tnx to Kyriakos Oikonomakos for fixing and testing the 
+      portability on FreeBSD
+
+7. ENJOY  };)
+
